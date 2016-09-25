@@ -1,0 +1,13 @@
+.smallProfile{
+    background-color: #2980b9;
+    color: #fff;
+    padding: 10px 15%;
+}
+.smallProfile img{
+    display: inline-block;
+    vertical-align: middle;
+    width:15%;
+}
+.smallProfile h1, .smallProfile p{
+    margin:0;
+}

@@ -1,0 +1,29 @@
+.grid{
+
+}
+
+.cell30{
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}
+.cell40{
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+}
+.cell50{
+     display: inline-block;
+     vertical-align: top;
+     width: 50%;
+ }
+.cell60{
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+}
+.cell70{
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+}

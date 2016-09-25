@@ -1,0 +1,109 @@
+*{
+
+    font-family: "Open Sans Light";
+}
+h1{
+    font-size: 100%;
+    font-family: "Open Sans";
+}
+
+html, body{
+    margin:0;
+    width:100%;
+    background-color: #ecf0f1;
+    overflow: hidden;
+}
+
+header{
+    height: 10%;
+    background-color: #2c3e50;
+    padding: 2.5%;
+}
+header h1{
+    font-family: "Open Sans Light";
+    font-size:115%;
+    text-align: center;
+    color: #ecf0f1;
+}
+
+.paragraph{
+
+    padding: 1.5% 3%;
+
+}
+
+.paragraph.light{
+    background-color: #fff;
+}
+button{
+    background-color: #3498db;
+    border: none;
+    font-size: 100%;
+    color: #fff;
+    padding: 2.5%;
+    width: 45%;
+}
+
+button.alt{
+    background-color: #9b59b6;
+}
+
+
+.hide{
+    display: none;
+}
+
+#loginBtn{
+    width: 100%;
+}
+
+.leftHeader{
+    display: inline-block;
+    vertical-align: middle;
+    width:10%;
+}
+.middleHeader{
+    display: inline-block;
+    vertical-align: middle;
+    width:75%;
+}
+.rightHeader{
+    display: inline-block;
+    vertical-align: middle;
+    width:10%;
+}
+.rightHeader img{
+    width:100%;
+}
+
+#summaryList{
+    overflow-x: auto;
+}
+.summaryElem{
+    background-color: #ffffff;
+    position: relative;
+    left:-3%;
+    width: 100%;
+    padding:1.5% 3%;
+}
+
+.summaryElem .header *{
+    font-size: 100%;
+    font-family: "Open Sans";
+}
+
+.summaryElem .headerLeft{
+    width: 68%;
+
+    display: inline-block;
+}
+.summaryElem .headerRight{
+    width: 29%;
+    text-align: right;
+
+    display: inline-block;
+}
+.summaryElem p{
+    display: inline;
+    
+}

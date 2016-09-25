@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Study Track</title>
+    <link href="css\landing.css" rel="stylesheet"/>
+    <link href="css\profile.css" rel="stylesheet"/>
+    <link href="css\grid.css" rel="stylesheet"/>
+    <link href="css\sidebar.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<!--Javascript Libraries-->
+<script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyArf6ERi87EYSNyk5cv25ZUgxZ0AHT9v-Y",
+        authDomain: "studytrack-d454e.firebaseapp.com",
+        databaseURL: "https://studytrack-d454e.firebaseio.com",
+        storageBucket: "studytrack-d454e.appspot.com",
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="js/utils.js"></script>
+
+<!--Login Page-->
+<header>
+    <div class="leftHeader">
+        <img src="img/bars.png" id="headerMenu" class="hide">
+    </div>
+    <div class="middleHeader">
+        <h1>Study Track</h1>
+    </div>
+    <div class="rightHeader">
+        <img src="" id="userPic" class="hide">
+    </div>
+</header>
+<content>
+    <div class="sidebar hide" id="sidebar"->
+        <header>
+            <div class="leftHeader">
+
+            </div>
+            <div class="middleHeader">
+                <h1>Control Panel</h1>
+            </div>
+            <div class="rightHeader">
+                <img src="img/close.png" id="sbClose"/>
+            </div>
+        </header>
+        <div class="sidebarItem">
+            <span id="addTaskBtn">Add Task</span>
+            <div class="sidebarForm hide" id="addTaskForm">
+                <div class="formItem">
+                    <div class="formLeft">Task</div>
+                    <div class="formRight"><input type="text" id="aTTask"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLeft">Subject</div>
+                    <div class="formRight"><input type="text" id="aTSubject"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLeft">Deadline</div>
+                    <div class="formRight"><input type="date" id="aTDeadline" placeholder="Deadline">
+                    </div>
+                </div>
+                <div class="formItem">
+                    <button id="submitTask">Add Task</button>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarItem">
+            <span id="addClassBtn">Add Class</span>
+            <div class="sidebarForm hide" id="addClassForm">
+                <div class="formItem">
+                    <div class="formLeft">Subject Code</div>
+                    <div class="formRight"><input type="text" id="aCCode"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLeft">Day</div>
+                    <div class="formRight"><input type="text" id="aCDay"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLeft">Time</div>
+                    <div class="formRight"><input type="text" id="aCTime"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLeft">Duration</div>
+                    <div class="formRight"><input type="text" id="aCDuration"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLeft">Location</div>
+                    <div class="formRight"><input type="text" id="aCLocation"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLeft">Type</div>
+                    <div class="formRight"><input type="text" id="aCType"></div>
+                </div>
+                <div class="formItem">
+                    <button id="submitClass">Add Class</button>
+                </div>
+            </div>
+        </div>
+        <div class="sidebarItem">
+            <span id="addSubjectBtn">Add Subject</span>
+            <div class="sidebarForm hide" id="addSubjectForm">
+                <div class="formItem">
+                    <div class="formItem">
+                        <div class="formLeft">Code</div>
+                        <div class="formRight"><input type="text" id="aSCode"></div>
+                    </div>
+                    <div class="formItem">
+                        <div class="formLeft">Name</div>
+                        <div class="formRight"><input type="text" id="aSName"></div>
+                    </div>
+                    <div class="formItem">
+                        <div class="formLeft">Lecturer</div>
+                        <div class="formRight"><input type="text" id="aSLecturer"></div>
+                    </div>
+
+                    <div class="formItem">
+                        <button id="submitSubject">Add Subject</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="paragraph light" id="landing">
+        <h1>Welcome to Study Track</h1>
+        <p>To get the full experience of this app, use a Chrome based browser</p>
+        <button id="loginBtn">Register / Login</button>
+    </div>
+    <div class="smallProfile hide" id="loginLanding">
+
+        <div class="cell60">
+            <p>Welcome</p>
+            <h1><span id="displayName"></span></h1>
+        </div>
+
+    </div>
+    <div class="paragraph hide" id="summaryList">
+        <div class="" id="taskSummary">
+            <h1>Tasks</h1>
+            <div class="summaryElem">
+                <div class="header">
+                    <span class="headerLeft">Some Paper Is Due</span>
+                    <span class="headerRight">12/12/16</span>
+                </div>
+                <p>CS241</p>
+                <p>Some Class</p>
+            </div>
+        </div>
+
+        <div class="" id="classSummary">
+            <h1>Classes</h1>
+            <div class="summaryElem">
+                <div class="header">
+                    <span class="headerLeft">CS241 Some Class</span>
+                    <span class="headerRight">12pm - 1pm</span>
+                </div>
+                <p>
+                    <span class="headerLeft">Livingstone Tower 13</span>
+                    <span class="headerRight">Lecture</span>
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+</content>
+
+<!--My Javascript Code-->
+<script src="js/AccountManager.js"></script>
+<script src="js/LoginHandler.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/database.js"></script>
+<script src="js/ElementFactory.js"></script>
+<script src="js/SummaryBuilder.js"></script>
+
+</body>
+</html>

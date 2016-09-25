@@ -1,0 +1,46 @@
+.sidebar{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 80%;
+    height:100%;
+    background-color: #34495e;
+    z-index: 5;
+}
+
+.sidebar header{
+    height: auto;
+    background-color: transparent;
+}
+
+.sidebarItem{
+    width: 95%;
+    padding: 4% 2.5%;
+    background-color: #ecf0f1 ;
+    border-bottom: #7f8c8d 1px solid;
+    font-size: 125%;
+}
+
+.sidebarForm{
+    padding: 2.5%;
+    width: 95%;
+    font-size: 70%;
+}
+
+.formItem{
+    display: block;
+    padding-bottom: 1%;
+}
+
+.formItem input{
+    width: 100%;
+}
+
+.formLeft{
+    width: 35%;
+    display: inline-block;
+}
+.formRight{
+    width: 50%;
+    display: inline-block;
+}
