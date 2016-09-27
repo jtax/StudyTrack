@@ -19,6 +19,7 @@ function AccountManager() {
             // The signed-in user info.
             user = result.user;
             counter = 0;
+            database.setUserRef();
             callback(true);
         }).catch(function (error) {
             console.log("Auth Error: " + error);

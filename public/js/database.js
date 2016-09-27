@@ -3,19 +3,36 @@
  */
 function Database(){
     var snapshot;
+    var userRef;
+
+    this.setUserRef = function(){
+        userRef = "users/" + accountManager.getUser().uid;
+    };
 
     this.getLastSnapshot = function(){
         return snapshot;
     };
 
-    this.getLastTaskList = function(){
-      var tasks;
-        for(var subject in snapshot.subjects){
-            console.log(subject.name);
-        }
+
+     var getTasks = function(classCode){
+      var subject = getSubject(classCode);
+        return subject.tasks;
+    };
+    this.getTasks = getTasks;
+
+
+    var getSubject = function(classCode){
+        var SubjectList = snapshot.subjects;
+        return SubjectList[classCode];
+    };
+    this.getSubject = getSubject;
+
+    this.getSubjects = function(){
+        return snapshot.subjects;
     };
 
     this.init= function(){
+
 
     };
 
@@ -42,7 +59,7 @@ function Database(){
     };
 
     this.saveClass = function (code, day,time,duration,location,type){
-        firebase.database().ref('users/'+ accountManager.getUser().uid + "/subjects/" + code + "/classes/" + day).push({
+        firebase.database().ref('users/'+ accountManager.getUser().uid + "/subjects/" + code + "/classes/").push({
             day:day,
             time:time,
             duration:duration,
