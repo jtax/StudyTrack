@@ -8,7 +8,6 @@ function AccountManager() {
 
     this.init = function(){
         provider = new firebase.auth.FacebookAuthProvider();
-        provider.addScope("email");
         counter = 0;
     };
 

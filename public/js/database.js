@@ -14,12 +14,21 @@ function Database(){
     };
 
 
-     var getTasks = function(classCode){
-      var subject = getSubject(classCode);
-        return subject.tasks;
+     var getTask = function(classCode){
+      var taskList = snapshot.tasks;
+         return taskList[classCode];
+    };
+    this.getTask = getTask;
+
+    var getTasks = function(){
+        var tasks = [];
+        var subjects = snapshot.tasks;
+        for(var subject in subjects){
+            tasks.push(getTask(subject));
+        }
+        return tasks;
     };
     this.getTasks = getTasks;
-
 
     var getSubject = function(classCode){
         var SubjectList = snapshot.subjects;
@@ -27,9 +36,10 @@ function Database(){
     };
     this.getSubject = getSubject;
 
-    this.getSubjects = function(){
+    var getSubjects = function(){
         return snapshot.subjects;
     };
+    this.getSubjects = getSubjects;
 
     this.init= function(){
 
@@ -41,7 +51,8 @@ function Database(){
         userRef.on('value',function(snapshot){updateSummary(snapshot.val())});
     };
     this.saveTask = function (task, subject, deadline){
-        firebase.database().ref('users/'+ accountManager.getUser().uid + "/subjects/" + subject + "/tasks").push({
+        firebase.database().ref('users/'+ accountManager.getUser().uid + "/tasks/" +subject).push({
+            subject:subject,
             task:task,
             deadline:deadline
         });

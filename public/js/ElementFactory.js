@@ -5,12 +5,19 @@ function ElementFactory(){
     this.createTaskSummary = function(task, subject){
         var text = task.task;
         var date = task.deadline;
-        var classCode = subject.code;
-        var className = subject.name;
+        var classCode, className ;
+
+        if(subject) {
+             classCode = subject.code;
+             className = subject.name;
+        }else{
+             classCode = task.subject;
+             className = "";
+        }
 
         var classLabel = classCode + " " + className;
 
-        return createSummaryElement(task,"TASK",text,date,classLabel);
+        return createSummaryElement(task,"TASK",text,date,classLabel,"");
     };
 
     this.createClassSummary = function(_class, subject){

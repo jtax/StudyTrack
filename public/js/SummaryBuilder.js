@@ -9,6 +9,12 @@ function SummaryBuilder(){
     };
     
     var generateSummary = function() {
+       generateClassSummary();
+        generateTaskSummary();
+    };
+
+    var generateClassSummary = function(){
+        getElemID("classSummary").innerHTML = "<h1>Classes</h1>";
         var classElems = [];
         var subjects = database.getSubjects();
         for (var code in subjects) {
@@ -17,9 +23,24 @@ function SummaryBuilder(){
             }
         }
         for(var elem in classElems){
-            getElemID("classSummary").innerHTML += classElems;
+            getElemID("classSummary").innerHTML += classElems[elem];
         }
 
+    };
+
+    var generateTaskSummary = function(){
+        getElemID("taskSummary").innerHTML = "<h1>Tasks</h1>";
+        var taskElems = [];
+        var taskList = database.getTasks();
+        for (var tasks in taskList) {
+            for(var task in taskList[tasks]) {
+                var subject = database.getSubject(taskList[tasks][task].subject);
+                taskElems.push(elemFactory.createTaskSummary(taskList[tasks][task], subject));
+            }
+        }
+        for(var elem in taskElems){
+            getElemID("taskSummary").innerHTML += taskElems[elem];
+        }
     }
 
 }
